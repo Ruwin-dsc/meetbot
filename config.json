@@ -1,0 +1,17 @@
+{
+    "token": "Token",
+    "prefix": "prefix",
+    "owner": ["OWNER ID 1", "OWNER ID 2"],
+    "linkbot": "LA BAH TU METS LE LIEN DU BOT oe ça va servir à rien c juste pour le style", 
+        "BDD": {
+        "note": "si tu ne comprend pas ce qu'il faut faire je te coneille d'aller voir le readme du github ou rejoindre le support https://discord.gg/w8FzTaXffc",
+        "host": "127.0.0.1 || host du vps",     
+        "user": "root || user du vps",
+        "password": "Supprimer cette ligne si vous êtes pas sur vps",
+        "database": "friends",
+        "charset": "utf8mb4"
+    },
+    "salonhomme": "ID SALON HOMME",
+    "salonfemme": "ID DALON FEMME"  
+
+}

@@ -41,6 +41,7 @@ Hey, voici un bot qui te permettra d'avoir un bot Tinter à ton serveur où les 
 
 }
 ```
+[screen](https://media.discordapp.net/attachments/1121718489829347358/1167004948064653322/Capture_decran_2023-10-26_a_09.40.43.png?ex=654c8d0d&is=653a180d&hm=70065556fa0f9ad8391a41c1333d4aec5c2a6075620544b3fa8c8a74d05ec936&=&width=1244&height=1638)
 
 ## :raised_hands: **Contribution**
 Si tu souhaites contribuer à ce projet, n'hésite pas à ouvrir une pull request !

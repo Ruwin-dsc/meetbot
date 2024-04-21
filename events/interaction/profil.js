@@ -137,7 +137,7 @@ module.exports = {
         const prenom = interaction.fields.getTextInputValue('prenom')
         const age = interaction.fields.getTextInputValue('age')
         if(age) {
-            if(req[0].age >= 18) age2 = "Oui - "
+            if(age >= 18) age2 = "Oui - "
             else age2 = "Non - "
         }
         if(!Number(age) || age <= 13) return

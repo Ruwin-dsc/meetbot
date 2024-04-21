@@ -8,7 +8,7 @@
         "host": "127.0.0.1 || host du vps",     
         "user": "root || user du vps",
         "password": "Supprimer cette ligne si vous êtes pas sur vps",
-        "database": "friends",
+        "database": "meet",
         "charset": "utf8mb4"
     },
     "salonhomme": "ID SALON HOMME",

@@ -17,11 +17,11 @@ exports.run = async(bot, message) => {
         `\`・ Envoyer :\`\n` +
         `> Vous pouvez envoyer votre profil dans le channel correspondant, l'envoie de profil est limité à 1 par jour.\n` +
         `\n` +
-        `\`・ Information :\`` +
+        `\`・ Information :\`\n` +
         `> Vous donne les informations par rapport à toutes vos demandes, match et likes reçu.` 
     )
     .setColor('LuminousVividPink')
-    .setFooter({ text: "https://discord.gg/w8FzTaXffc" })
+    .setFooter({ text: "https://discord.gg/uhq" })
     .setImage(`https://media.discordapp.net/attachments/1121718489829347358/1166720960519483462/7aac999f34d23f7de7c2291410550bab.gif?ex=654b8491&is=65390f91&hm=fd61d77459c55e49f40bd938b856ebbba332f0a4199468d6de8b280111257cb6&=&width=1000&height=552`)
 
     const botton1 = new Discord.ButtonBuilder()

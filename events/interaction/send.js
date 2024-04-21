@@ -24,11 +24,14 @@ const inten = {
     }
 }
 
+const map = new Map()
+
 module.exports = {
   name: "interactionCreate",
   async execute(interaction, bot) {
     let age2;
     if(interaction.customId == "send") {
+        if(map.has(interaction.user.id)) return interaction.reply({ content: `Vous avez déjà envoyer votre profil, veuillez réessayez <t:${Math.floor(new Date().getTime() / 1000) + 24 * 60 * 60}:R>`, ephemeral: true})
         bot.db.query(`SELECT * FROM user WHERE userId = "${interaction.user.id}"`, async (err, req) => {
         if(req.length < 1) {
         bot.db.query(`INSERT INTO user (userId) VALUES (?)`, [interaction.user.id])
@@ -88,14 +91,19 @@ module.exports = {
             const row = new Discord.ActionRowBuilder().addComponents(botton1, botton2)
             if(sexe == "Homme") {
             interaction.guild.channels.cache.get(config.salonhomme).send({ content: `${interaction.user}`, embeds: [embed3], components: [row] })
+            map.set(interaction.user.id)
             } else {
             interaction.guild.channels.cache.get(config.salonfemme).send({ content: `${interaction.user}`, embeds: [embed3], components: [row] })
+            map.set(interaction.user.id)
             }
 
             const embed4 = new Discord.EmbedBuilder()
             .setDescription(`Votre profil a été envoyé !`)
             .setColor('Green')
             interaction.reply({ embeds: [embed4], ephemeral: true })
+            setTimeout(() => {
+                map.delete(action.executor.id);
+              }, 86400000)
         }
         })
     }

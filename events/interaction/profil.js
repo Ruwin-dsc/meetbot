@@ -136,6 +136,10 @@ module.exports = {
     } else if(interaction.customId == "profilModal") {
         const prenom = interaction.fields.getTextInputValue('prenom')
         const age = interaction.fields.getTextInputValue('age')
+        if(age) {
+            if(req[0].age >= 18) age2 = "Oui - "
+            else age2 = "Non - "
+        }
         if(!Number(age) || age <= 13) return
         const sexe = interaction.fields.getTextInputValue('sexe')
         if(sexe !== "Homme" && sexe !== "Femme") return 
@@ -148,7 +152,22 @@ module.exports = {
             bot.db.query(`UPDATE user SET prenom = ?, age = ?, sexe = ?, orientation = ?, biographie = ? WHERE userId = ${interaction.user.id}`, [prenom, age, sexe, orientation, biographie]);
         }
 
-        interaction.update({ content: `Vous avez bien modifié votre profil`})
+        const embed = new Discord.EmbedBuilder()
+        .setTitle(inten[intention].emoji)
+        .setColor(inten[intention].color)
+        .setThumbnail(photo)
+        .setDescription(
+            `**__Profil d'un utilisateur__**\n` +
+            `\n` +
+            `> \`Prénom\` : ${prenom}\n\n` +
+            `> \`Majeur\` : ${age2}${age}\n\n` +
+            `> \`Sexe\` : ${sexe}\n\n` +
+            `> \`Orientation\` : ${orientation}\n\n` +
+            `**__Biographie__**\n` +
+            `\`\`\` ${biographie} \`\`\``
+        )
+
+        interaction.update({ content: `Vous avez bien modifié votre profil`, embeds: [embed]})
     } else if(interaction.customId == "editphotoprofil") {
         const filter = (m) => m.author.id === interaction.user.id
         const embed = new Discord.EmbedBuilder()
